@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroImg from "@/assets/hero-srilanka.jpg";
 import heroVideo from "@/assets/hero-sigiriya.mp4";
 
 export function Hero() {
@@ -16,7 +15,6 @@ export function Hero() {
       <motion.div style={{ scale, y }} className="absolute inset-0">
         <video
           src={heroVideo}
-          poster={heroImg}
           autoPlay
           loop
           muted
