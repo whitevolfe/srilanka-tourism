@@ -42,7 +42,7 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div
-          className={`flex items-center justify-between rounded-full px-5 py-2.5 transition-all duration-500 ${
+          className={`flex items-center gap-21 rounded-full px-5 py-2.5 transition-all duration-500 ${
             scrolled ? "glass shadow-soft" : "bg-transparent"
           }`}
         >
@@ -62,7 +62,9 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors ${
-                  active === l.href ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  active === l.href
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {l.label}
@@ -96,9 +98,15 @@ export function Navbar() {
               aria-label="Menu"
             >
               <span className="block w-4 space-y-1">
-                <span className={`block h-0.5 bg-foreground transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`} />
-                <span className={`block h-0.5 bg-foreground transition-opacity ${open ? "opacity-0" : ""}`} />
-                <span className={`block h-0.5 bg-foreground transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
+                <span
+                  className={`block h-0.5 bg-foreground transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`}
+                />
+                <span
+                  className={`block h-0.5 bg-foreground transition-opacity ${open ? "opacity-0" : ""}`}
+                />
+                <span
+                  className={`block h-0.5 bg-foreground transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`}
+                />
               </span>
             </button>
           </div>
@@ -120,7 +128,12 @@ export function Navbar() {
                 {l.label}
               </a>
             ))}
-            <Link to="/about" className="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-foreground/5">About</Link>
+            <Link
+              to="/about"
+              className="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-foreground/5"
+            >
+              About
+            </Link>
           </motion.nav>
         )}
       </div>
