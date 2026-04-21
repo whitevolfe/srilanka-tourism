@@ -42,7 +42,7 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div
-          className={`flex items-center gap-21 rounded-full px-5 py-2.5 transition-all duration-500 ${
+          className={`flex items-center gap-19 rounded-full px-5 py-2.5 transition-all duration-500 ${
             scrolled ? "glass shadow-soft" : "bg-transparent"
           }`}
         >
