@@ -16,11 +16,17 @@ const colors = [
 function LogoMark({ variant = "default" }: { variant?: "default" | "mono" | "outline" }) {
   return (
     <div className={`flex items-center gap-2 ${variant === "mono" ? "text-foreground" : ""}`}>
-      <div className={`relative h-10 w-10 rounded-full ${variant === "outline" ? "border-2 border-foreground" : variant === "mono" ? "bg-foreground" : "bg-gradient-sunset shadow-glow"}`}>
+      <div
+        className={`relative h-10 w-10 rounded-full ${variant === "outline" ? "border-2 border-foreground" : variant === "mono" ? "bg-foreground" : "bg-gradient-sunset shadow-glow"}`}
+      >
         {variant !== "outline" && (
           <>
-            <div className={`absolute inset-1.5 rounded-full ${variant === "mono" ? "bg-cream" : "bg-cream/90"}`} />
-            <div className={`absolute inset-3 rounded-full ${variant === "mono" ? "bg-foreground" : "bg-gradient-sunset"}`} />
+            <div
+              className={`absolute inset-1.5 rounded-full ${variant === "mono" ? "bg-cream" : "bg-cream/90"}`}
+            />
+            <div
+              className={`absolute inset-3 rounded-full ${variant === "mono" ? "bg-foreground" : "bg-gradient-sunset"}`}
+            />
           </>
         )}
       </div>
@@ -37,7 +43,7 @@ export default function Brand() {
   }, []);
 
   return (
-    <main className="relative">
+    <main className="relative flex flex-col items-center justify-center min-h-screen">
       <SmoothScroll />
       <Navbar />
 
@@ -62,7 +68,9 @@ export default function Brand() {
               { v: "outline" as const, bg: "bg-foreground text-cream" },
             ].map(({ v, bg }) => (
               <Reveal key={v}>
-                <div className={`group rounded-3xl ${bg} aspect-[4/3] flex items-center justify-center shadow-soft transition-transform hover:-translate-y-2`}>
+                <div
+                  className={`group rounded-3xl ${bg} aspect-[4/3] flex items-center justify-center shadow-soft transition-transform hover:-translate-y-2`}
+                >
                   <div className={v === "outline" ? "text-cream" : ""}>
                     <LogoMark variant={v} />
                   </div>
@@ -98,17 +106,26 @@ export default function Brand() {
           <div className="grid md:grid-cols-2 gap-4">
             <Reveal>
               <div className="rounded-3xl bg-card p-10 shadow-soft">
-                <div className="text-xs uppercase tracking-[0.2em] text-sunset font-semibold">Display · Fraunces</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-sunset font-semibold">
+                  Display · Fraunces
+                </div>
                 <div className="mt-4 font-display text-6xl leading-none">Aa</div>
                 <div className="mt-4 font-display text-2xl">Explore the island.</div>
-                <div className="mt-2 text-sm text-muted-foreground">Used for headlines and editorial moments. Optical sizing on.</div>
+                <div className="mt-2 text-sm text-muted-foreground">
+                  Used for headlines and editorial moments. Optical sizing on.
+                </div>
               </div>
             </Reveal>
             <Reveal>
               <div className="rounded-3xl bg-card p-10 shadow-soft">
-                <div className="text-xs uppercase tracking-[0.2em] text-sunset font-semibold">Body · Inter</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-sunset font-semibold">
+                  Body · Inter
+                </div>
                 <div className="mt-4 font-sans text-6xl leading-none">Aa</div>
-                <div className="mt-4 text-base leading-relaxed">From mist-wrapped tea hills to sun-soaked southern shores — handcrafted journeys through the pearl of the Indian Ocean.</div>
+                <div className="mt-4 text-base leading-relaxed">
+                  From mist-wrapped tea hills to sun-soaked southern shores — handcrafted journeys
+                  through the pearl of the Indian Ocean.
+                </div>
               </div>
             </Reveal>
           </div>

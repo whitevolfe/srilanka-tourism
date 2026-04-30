@@ -18,7 +18,7 @@ export default function Index() {
   }, []);
 
   return (
-    <main className="relative">
+    <main className="relative flex flex-col items-center justify-center min-h-screen">
       <SmoothScroll />
       <Navbar />
       <Hero />

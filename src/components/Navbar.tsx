@@ -42,16 +42,16 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div
-          className={`flex items-center gap-19 rounded-full px-5 py-2.5 transition-all duration-500 ${
+          className={`flex items-center gap-4 md:gap-19 rounded-full px-4 md:px-5 py-2 transition-all duration-500 ${
             scrolled ? "glass shadow-soft" : "bg-transparent"
           }`}
         >
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative h-8 w-8 rounded-full bg-gradient-sunset shadow-glow">
+            <div className="relative h-7 w-7 md:h-8 md:w-8 rounded-full bg-gradient-sunset shadow-glow">
               <div className="absolute inset-1 rounded-full bg-cream/90" />
               <div className="absolute inset-2.5 rounded-full bg-gradient-sunset" />
             </div>
-            <span className="font-display text-lg font-semibold tracking-tight">
+            <span className="font-display text-base md:text-lg font-semibold tracking-tight">
               Ceylon<span className="text-gradient">Voyage</span>
             </span>
           </Link>
@@ -88,7 +88,7 @@ export function Navbar() {
             </Link>
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full bg-foreground text-background px-4 py-2 text-sm font-medium transition-all hover:bg-gradient-sunset hover:text-cream hover:shadow-glow"
+              className="hidden sm:inline-flex items-center rounded-full bg-foreground text-background px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium transition-all hover:bg-gradient-sunset hover:text-cream hover:shadow-glow"
             >
               Plan Trip
             </a>
@@ -116,24 +116,32 @@ export function Navbar() {
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden mt-2 glass rounded-3xl p-3 flex flex-col"
+            className="md:hidden mt-2 glass rounded-2xl p-2 flex flex-col mx-4 shadow-soft"
           >
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-foreground/5"
+                className="px-4 py-3 rounded-xl text-sm font-medium hover:bg-foreground/5 active:bg-foreground/10 transition-colors"
               >
                 {l.label}
               </a>
             ))}
             <Link
               to="/about"
-              className="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-foreground/5"
+              onClick={() => setOpen(false)}
+              className="px-4 py-3 rounded-xl text-sm font-medium hover:bg-foreground/5 active:bg-foreground/10 transition-colors"
             >
               About
             </Link>
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mx-4 my-2 text-center rounded-xl bg-foreground text-background px-4 py-2.5 text-sm font-medium transition-all hover:bg-gradient-sunset hover:text-cream"
+            >
+              Plan Trip
+            </a>
           </motion.nav>
         )}
       </div>
