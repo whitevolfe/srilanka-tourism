@@ -11,6 +11,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { BlogPreview } from "@/components/BlogPreview";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Footer } from "@/components/Footer";
+import GoogleTranslate from "@/components/GoogleTranslate";
 
 export default function Index() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function Index() {
     <main className="relative flex flex-col items-center justify-center min-h-screen">
       <SmoothScroll />
       <Navbar />
+      <GoogleTranslate />
       <Hero />
       <RoundTours />
       <DayTours />
